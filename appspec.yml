@@ -1,0 +1,14 @@
+version: 0.1
+os: linux
+files:
+ - source: /
+   destination: /var/www/html
+hooks:
+  AfterInstall:
+   -loaction: scripts/install_nginx.sh
+    timeout: 300
+    runas: root
+  ApplicantionStart:
+   -loaction: scripts/start_nginx.sh
+    timeout: 300
+    runas: root
